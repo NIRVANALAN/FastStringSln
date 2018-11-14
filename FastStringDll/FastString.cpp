@@ -6,6 +6,8 @@ FastString::FastString(char* psz)
 	:m_psz(new char[strlen(psz) + 1])
 {
 	strcpy_s(m_psz, strlen(psz) + 1, psz);
+	a = 2;
+	b = 5;
 }  //分配内存
 
 FastString::~FastString(void)
@@ -21,3 +23,19 @@ int FastString::Find(char*psz)
 {
 	return 0;
 } //省略, 这不是我们讨论的重点
+
+int FastString::fa()
+{
+	return this->a;
+}
+
+int FastString::fb()
+{
+	return this->b;
+}
+
+
+IFastString* CreateObject(char* psz)
+{
+	return new FastString(psz);
+}

@@ -24,6 +24,12 @@
     <ClInclude Include="FastString.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="IFastString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IPO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -37,6 +43,12 @@
     </ClCompile>
     <ClCompile Include="FastString.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IFastString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IPO.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

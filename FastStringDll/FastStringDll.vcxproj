@@ -148,6 +148,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="FastString.h" />
+    <ClInclude Include="IFastString.h" />
+    <ClInclude Include="IPO.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -155,6 +157,8 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="FastString.cpp" />
     <ClCompile Include="FastStringDll.cpp" />
+    <ClCompile Include="IFastString.cpp" />
+    <ClCompile Include="IPO.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
