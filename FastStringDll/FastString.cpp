@@ -60,3 +60,13 @@ IFastString* CreateObject(char* psz)
 {
 	return new FastString(psz);
 }
+
+void FastString::Dynamic(char *name, void**ppI)
+{
+	if (strcmp(name, "IFastString") == 0)
+		*ppI = (IFastString*)this;
+	else if (strcmp(name, "IPO") == 0)
+		*ppI = (IPO*)this;
+	else  if (strcmp(name, "IEO") == 0)
+		*ppI = (IPO*)this;
+}

@@ -30,6 +30,9 @@
     <ClInclude Include="IPO.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="IEO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -48,6 +51,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="IPO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IEO.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="FastString.h" />
+    <ClInclude Include="IEO.h" />
     <ClInclude Include="IFastString.h" />
     <ClInclude Include="IPO.h" />
     <ClInclude Include="stdafx.h" />
@@ -157,6 +158,7 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="FastString.cpp" />
     <ClCompile Include="FastStringDll.cpp" />
+    <ClCompile Include="IEO.cpp" />
     <ClCompile Include="IFastString.cpp" />
     <ClCompile Include="IPO.cpp" />
     <ClCompile Include="stdafx.cpp">

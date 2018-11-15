@@ -16,6 +16,7 @@ public:
 	virtual int __stdcall Find(char*psz);       //查找指定的子串
 	virtual int __stdcall FindN(char* psz, int n);
 	virtual void __stdcall Save();
+	virtual void __stdcall Dynamic(char* name, void** ppI) override;
 	int fb();
 	int fa();
 };
