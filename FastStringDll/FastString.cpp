@@ -1,6 +1,7 @@
 #include "stdafx.h"  // 预编译
 #include "FastString.h"
 #include<string.h>
+#include <iostream>
 
 FastString::FastString(char* psz)
 	:m_psz(new char[strlen(psz) + 1])
@@ -23,6 +24,21 @@ int FastString::Find(char*psz)
 {
 	return 0;
 } //省略, 这不是我们讨论的重点
+
+int FastString::FindN(char * psz, int n)
+{
+	return 0;
+}
+
+void __stdcall FastString::Save()
+{
+	std::cout<<"saved"<<std::endl;
+}
+
+// void __stdcall FastString::Save()
+// {
+// 	std::cout << "saved" << std::endl;
+// }
 
 int FastString::fa()
 {
