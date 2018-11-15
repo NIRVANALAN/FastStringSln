@@ -34,6 +34,11 @@ int FastString::fb()
 	return this->b;
 }
 
+void FastString::Delete()
+{
+	delete this;
+}
+
 
 IFastString* CreateObject(char* psz)
 {
