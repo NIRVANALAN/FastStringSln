@@ -4,35 +4,36 @@
 #include <iostream>
 
 FastString::FastString(char* psz)
-	:m_psz(new char[strlen(psz) + 1])
+	: m_psz(new char[strlen(psz) + 1])
 {
 	strcpy_s(m_psz, strlen(psz) + 1, psz);
 	a = 2;
 	b = 5;
-}  //分配内存
+} //分配内存
 
 FastString::~FastString(void)
 {
 	delete[]m_psz;
-}    //释放内存
+} //释放内存
 
-int FastString::Length(void) {
+int FastString::Length(void)
+{
 	return strlen(m_psz);
-}  //计算长度
+} //计算长度
 
-int FastString::Find(char*psz)
+int FastString::Find(char* psz)
 {
 	return 0;
 } //省略, 这不是我们讨论的重点
 
-int FastString::FindN(char * psz, int n)
+int FastString::FindN(char* psz, int n)
 {
 	return 0;
 }
 
 void __stdcall FastString::Save()
 {
-	std::cout<<"saved"<<std::endl;
+	std::cout << "saved" << std::endl;
 }
 
 // void __stdcall FastString::Save()
@@ -61,12 +62,33 @@ IFastString* CreateObject(char* psz)
 	return new FastString(psz);
 }
 
-void FastString::Dynamic(char *name, void**ppI)
+void FastString::Dynamic(char* name, void** ppI)
 {
+	void* pv = 0;
 	if (strcmp(name, "IFastString") == 0)
-		*ppI = (IFastString*)this;
+	{
+		pv = static_cast<IFastString*>(this);
+		// pv->Duplicate
+		((IFastString*)(pv))->DuplicatePointer();
+	}
 	else if (strcmp(name, "IPO") == 0)
-		*ppI = (IPO*)this;
-	else  if (strcmp(name, "IEO") == 0)
-		*ppI = (IPO*)this;
+	{
+		pv = static_cast<IPO*>(this);
+		// *ppI = static_cast<IPO*>(this);
+		((IPO*)(pv))->DuplicatePointer();
+	}
+	else if (strcmp(name, "IEO") == 0)
+	{
+		pv= static_cast<IPO*>(this);
+		((IEO*)pv)->DuplicatePointer();
+	}
+	if (pv!=nullptr)
+	{
+		*ppI = pv;
+	}
+	// else
+	// 	ppI = 0;
+	// if (ppI != nullptr)
+	// {
+	// }
 }

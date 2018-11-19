@@ -6,10 +6,21 @@
 class FastString : public IFastString, public IPO
 {
 	char* m_psz;
+	int m_cPtrs; // add pointer counter
 public:
 	int b;
 	int a;
-	FastString(char* psz);
+	FastString(char* psz):m_cPtrs(0){};
+	void DuplicatePointer(void)
+	{
+		++m_cPtrs;
+	}   //增加引用计数
+	void DestroyPointer(void)
+	{
+		if (--m_cPtrs == 0) delete this;
+	}
+	//减少引用计数,减到0时,删除对象自身.
+
 	~FastString(void);
 	virtual void __stdcall Delete() override;
 	virtual int __stdcall Length(void);          //返回该字符串的长度
